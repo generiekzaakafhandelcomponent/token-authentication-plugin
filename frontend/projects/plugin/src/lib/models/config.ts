@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2022 Ritense BV, the Netherlands.
+ * Copyright 2015-2024 Ritense BV, the Netherlands.
  *
  * Licensed under EUPL, Version 1.2 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-/*
- * Public API Surface of NotifyNL
- */
+import {PluginConfigurationData} from "@valtimo/plugin";
 
-export * from './lib/models';
-export * from './lib/token-authentication-plugin.module';
-export * from './lib/token-authentication-plugin.specification';
+interface TokenAuthenticationConfig extends PluginConfigurationData {
+  token: string;
+}
+
+export {TokenAuthenticationConfig};

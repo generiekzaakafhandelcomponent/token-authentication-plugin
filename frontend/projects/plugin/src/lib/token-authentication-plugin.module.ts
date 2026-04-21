@@ -14,17 +14,16 @@
  * limitations under the License.
  */
 
-dependencies {
+import {TokenAuthenticationConfigurationComponent} from './components/token-authentication-configuration/token-authentication-configuration.component';
+import {CommonModule} from '@angular/common';
+import {FormModule, InputModule} from '@valtimo/components';
+import {NgModule} from '@angular/core';
+import {PluginTranslatePipeModule} from "@valtimo/plugin";
 
-    implementation("com.ritense.valtimo:plugin-valtimo")
-    implementation("org.springframework.boot:spring-boot-starter-web")
 
-    tasks.jar {
-        enabled = true
-        manifest {
-            attributes("Implementation-Title" to "Token Authentication plugin spring boot starter")
-        }
-    }
-}
-
-apply(from = "gradle/publishing.gradle")
+@NgModule({
+  declarations: [TokenAuthenticationConfigurationComponent],
+  imports: [CommonModule, PluginTranslatePipeModule, FormModule, InputModule],
+  exports: [TokenAuthenticationConfigurationComponent],
+})
+export class TokenAuthenticationPluginModule {}
