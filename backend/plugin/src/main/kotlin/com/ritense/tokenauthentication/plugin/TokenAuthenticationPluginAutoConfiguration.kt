@@ -22,11 +22,7 @@ import org.springframework.context.annotation.Bean
 
 @AutoConfiguration
 class TokenAuthenticationPluginAutoConfiguration {
-
     @Bean
-    fun tokenAuthenticationPluginFactory(
-        pluginService: PluginService
-    ): TokenAuthenticationPluginFactory {
-        return TokenAuthenticationPluginFactory(pluginService)
-    }
+    fun tokenAuthenticationPluginFactory(pluginService: PluginService): TokenAuthenticationPluginFactory =
+        TokenAuthenticationPluginFactory(pluginService)
 }

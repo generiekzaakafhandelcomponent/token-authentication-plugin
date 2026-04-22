@@ -16,27 +16,22 @@
 
 package com.ritense.tokenauthentication.plugin
 
-
 import com.ritense.plugin.annotation.Plugin
 import com.ritense.plugin.annotation.PluginProperty
 import org.springframework.http.HttpHeaders
 import org.springframework.web.client.RestClient
 
-
 @Plugin(
     key = "tokenauthentication",
     title = "Token Authentication",
-    description = "Plugin used to provide a RestClient with an Authorization token header"
+    description = "Plugin used to provide a RestClient with an Authorization token header",
 )
-class TokenAuthenticationPlugin: TokenAuthentication {
-
+class TokenAuthenticationPlugin : TokenAuthentication {
     @PluginProperty(key = "token", secret = true, required = true)
     lateinit var token: String
 
-    override fun applyAuth(builder: RestClient.Builder): RestClient.Builder {
-        return builder.defaultHeaders { headers ->
+    override fun applyAuth(builder: RestClient.Builder): RestClient.Builder =
+        builder.defaultHeaders { headers ->
             headers.set(HttpHeaders.AUTHORIZATION, "Token $token")
         }
-    }
-
 }

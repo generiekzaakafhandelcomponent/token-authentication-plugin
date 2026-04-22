@@ -20,10 +20,7 @@ import com.ritense.plugin.PluginFactory
 import com.ritense.plugin.service.PluginService
 
 class TokenAuthenticationPluginFactory(
-    pluginService: PluginService
-): PluginFactory<TokenAuthenticationPlugin>(pluginService) {
-
-    override fun create(): TokenAuthenticationPlugin {
-        return TokenAuthenticationPlugin()
-    }
+    pluginService: PluginService,
+) : PluginFactory<TokenAuthenticationPlugin>(pluginService) {
+    override fun create(): TokenAuthenticationPlugin = TokenAuthenticationPlugin()
 }
