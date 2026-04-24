@@ -14,6 +14,15 @@
  * limitations under the License.
  */
 
+dockerCompose {
+    setProjectName("token-authentication")
+    isRequiredBy(project.tasks.integrationTesting)
+
+    tasks.integrationTesting {
+        useComposeFiles.addAll("$rootDir/docker-resources/docker-compose-base-test.yml")
+    }
+}
+
 dependencies {
 
     compileOnly("com.ritense.valtimo:plugin-valtimo")
@@ -25,6 +34,20 @@ dependencies {
             attributes("Implementation-Title" to "Token Authentication plugin spring boot starter")
         }
     }
+
+    // Testing
+    testImplementation("com.ritense.valtimo:building-block")
+    testImplementation("com.ritense.valtimo:contract")
+    testImplementation("com.ritense.valtimo:core")
+    testImplementation("com.ritense.valtimo:plugin")
+    testImplementation("com.ritense.valtimo:temporary-resource-storage")
+    testImplementation("com.ritense.valtimo:test-utils-common")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    testImplementation("org.postgresql:postgresql")
+
+    testImplementation("com.ritense.valtimo:plugin-valtimo")
 }
 
 apply(from = "gradle/publishing.gradle")

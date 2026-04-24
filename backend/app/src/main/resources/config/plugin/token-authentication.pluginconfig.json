@@ -1,0 +1,10 @@
+[
+    {
+        "id": "41f00cf2-17ec-40b8-a42f-bd9024a08892",
+        "title": "Token Authentication (Autodeployed)",
+        "pluginDefinitionKey": "tokenauthentication",
+        "properties": {
+            "token": "${TOKEN_AUTHENTICATION_TOKEN}"
+        }
+    }
+]
