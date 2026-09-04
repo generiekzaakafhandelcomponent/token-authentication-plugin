@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2024 Ritense BV, the Netherlands.
+ * Copyright 2026 Ritense BV, the Netherlands.
  *
  * Licensed under EUPL, Version 1.2 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-pluginManager.withPlugin('maven-publish') {
+pluginManager.withPlugin("maven-publish") {
     publishing {
         publications {
             maven(MavenPublication) {
@@ -23,13 +23,13 @@ pluginManager.withPlugin('maven-publish') {
                 version = pluginProperties.pluginVersion
 
                 pom {
-                    name = 'Token Authentication plugin'
-                    description = 'Token Authentication plugin can be used for any API the requires an Authorization header with a simple Token value'
+                    name = "Token Authentication plugin"
+                    description = "Token Authentication plugin can be used for any API the requires an Authorization header with a simple Token value"
                     developers {
                         developer {
                             id = "team-valtimo"
                             name = "Team Valtimo"
-                            email = "team-valtimo@ritense.com"
+                            email = "support@ritense.com"
                         }
                     }
                 }

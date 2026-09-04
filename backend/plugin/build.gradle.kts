@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2024 Ritense BV, the Netherlands.
+ * Copyright 2026 Ritense BV, the Netherlands.
  *
  * Licensed under EUPL, Version 1.2 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,13 +27,6 @@ dependencies {
 
     compileOnly("com.ritense.valtimo:plugin-valtimo")
     compileOnly("org.springframework.boot:spring-boot-starter-web")
-
-    tasks.jar {
-        enabled = true
-        manifest {
-            attributes("Implementation-Title" to "Token Authentication plugin spring boot starter")
-        }
-    }
 
     // Testing
     testImplementation("com.ritense.valtimo:building-block")
