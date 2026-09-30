@@ -2,6 +2,10 @@
 
 Overzicht van wijzigingen per versie van de Token Authentication-plugin.
 
+## 1.0.3
+
+Ondersteuning voor Valtimo 13.48.0.
+
 ## 1.0.2
 
 Het logo van de plugin wordt nu wel correct weergegeven.
